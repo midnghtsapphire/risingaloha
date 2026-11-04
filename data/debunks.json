@@ -1,0 +1,80 @@
+[
+  {
+    "slug": "mrna-chromosome-19-integration",
+    "claim": "A chimeric Pfizer/Moderna spike sequence integrated into chromosome 19 of a bladder-cancer patient — 1-in-a-trillion odds of being an anomaly.",
+    "verdict": "misleading",
+    "oneLiner": "A single chimeric sequencing read in one case report is not evidence of vaccine DNA integration.",
+    "summary": "A case report in a Beall's-list journal describes one chimeric read in cell-free plasma DNA that the authors call integration into chromosome 19. One chimeric read with no orthogonal validation is a sequencing artifact, not integration; the \"20/20 bp match\" and \"1-in-a-trillion\" framings misuse statistics; the spike sequence is not unique to the vaccine; and the authors have major conflicts of interest.",
+    "bodyMarkdown": "See `mrna-vaccine-integration-factcheck.md` in the repo root for the full fact-check.",
+    "topics": ["covid", "mrna", "vaccines", "cancer", "genetics"],
+    "publishedAt": "2026-11-04",
+    "updatedAt": "2026-11-04",
+    "sources": [
+      { "title": "Study – IJIRMS", "url": "https://ijirms.in/index.php/ijirms/article/view/2130" },
+      { "title": "Study record – Zenodo", "url": "https://zenodo.org/records/17122912" },
+      { "title": "Veridica fact-check", "url": "https://www.veridica.ro/en/fake-news-disinformation-propaganda/fake-news-the-first-evidence-that-mrna-vaccines-alter-human-dna" },
+      { "title": "Al Jazeera: Did a study claim COVID vaccines cause cancer?", "url": "https://www.aljazeera.com/features/2025/10/11/did-a-south-korean-study-really-claim-that-covid-19-vaccines-cause-cancer" },
+      { "title": "Science Feedback – Hulscher \"negative efficacy\" review", "url": "https://science.feedback.org/review/covid19-vaccines-not-shown-negative-efficacy-contrary-claim-nicolas-hulscher/" },
+      { "title": "Beall's List of predatory journals", "url": "https://beallslist.net/standalone-journals/" },
+      { "title": "Nucleic Acids Research: chimeric read artifacts in NGS", "url": "https://academic.oup.com/nar/article/47/2/e12/5173669" }
+    ]
+  },
+  {
+    "slug": "ivermectin-cures-covid",
+    "claim": "Ivermectin is a proven cure for COVID-19.",
+    "verdict": "false",
+    "oneLiner": "Large randomized trials show no clinically meaningful benefit of ivermectin for COVID-19.",
+    "summary": "The largest randomized controlled trials (TOGETHER, ACTIV-6, PRINCIPLE) found no clinically meaningful benefit of ivermectin for COVID-19 on hospitalization, recovery time, or mortality. Smaller early-pandemic signals did not hold up on replication; the most widely circulated meta-analysis was withdrawn after fabricated data were identified in an included study.",
+    "bodyMarkdown": "Coming soon.",
+    "topics": ["covid", "treatments", "ivermectin"],
+    "publishedAt": "2026-11-04",
+    "updatedAt": "2026-11-04",
+    "sources": [
+      { "title": "TOGETHER trial – NEJM", "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2115869" },
+      { "title": "ACTIV-6 ivermectin arm – JAMA", "url": "https://jamanetwork.com/journals/jama/fullarticle/2807483" }
+    ]
+  },
+  {
+    "slug": "covid-vaccines-microchips",
+    "claim": "COVID-19 vaccines contain microchips or tracking devices.",
+    "verdict": "false",
+    "oneLiner": "There is no electronic component in any authorized COVID-19 vaccine; the volume alone makes it physically impossible.",
+    "summary": "Authorized COVID-19 vaccines contain mRNA or viral vector DNA, lipids, salts, and sugars. No integrated circuit small enough to pass through a vaccine needle and remain functional has been demonstrated, and independent chemical analyses of vials across the Pfizer, Moderna, and J&J products have found only the ingredients listed on the FDA fact sheets.",
+    "bodyMarkdown": "Coming soon.",
+    "topics": ["covid", "vaccines", "conspiracy"],
+    "publishedAt": "2026-11-04",
+    "updatedAt": "2026-11-04",
+    "sources": [
+      { "title": "Reuters Fact Check", "url": "https://www.reuters.com/article/factcheck-coronavirus-microchip-idUSL1N2KY1XB" },
+      { "title": "FDA Pfizer-BioNTech fact sheet", "url": "https://www.fda.gov/media/144414/download" }
+    ]
+  },
+  {
+    "slug": "mrna-vaccine-shedding",
+    "claim": "mRNA-vaccinated people \"shed\" vaccine components and harm unvaccinated people around them.",
+    "verdict": "false",
+    "oneLiner": "mRNA vaccines contain no live virus and cannot shed.",
+    "summary": "Shedding is a property of live-attenuated viral vaccines (e.g. some oral polio formulations). mRNA vaccines contain synthetic mRNA inside lipid nanoparticles — no replicating virus, no viable particle to shed. The claim conflates two unrelated vaccine platforms.",
+    "bodyMarkdown": "Coming soon.",
+    "topics": ["covid", "mrna", "vaccines"],
+    "publishedAt": "2026-11-04",
+    "updatedAt": "2026-11-04",
+    "sources": [
+      { "title": "Johns Hopkins – Vaccine Shedding", "url": "https://publichealth.jhu.edu/2021/can-covid-19-vaccinated-people-shed-the-virus" }
+    ]
+  },
+  {
+    "slug": "natural-immunity-always-better",
+    "claim": "Natural immunity from infection is always stronger and safer than vaccine immunity.",
+    "verdict": "mixed",
+    "oneLiner": "Post-infection immunity is real but comes at the cost of the infection itself; hybrid immunity (infection + vaccination) is generally the strongest.",
+    "summary": "Studies show infection-derived immunity provides substantial protection against reinfection and severe disease, often comparable to or exceeding primary-series vaccination for the same variant. But that protection only exists after surviving the infection, which carries non-trivial risk of hospitalization, Long COVID, and death. Multiple large cohort studies show the strongest and most durable protection is hybrid immunity (prior infection plus vaccination).",
+    "bodyMarkdown": "Coming soon.",
+    "topics": ["covid", "immunity", "vaccines"],
+    "publishedAt": "2026-11-04",
+    "updatedAt": "2026-11-04",
+    "sources": [
+      { "title": "Lancet: hybrid immunity meta-analysis", "url": "https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(22)00801-5/fulltext" }
+    ]
+  }
+]
