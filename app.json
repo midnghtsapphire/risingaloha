@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "RisingAloha Debunker",
+    "slug": "risingaloha-debunker",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "aloha-debunker",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "experiments": {
+      "typedRoutes": true
+    },
+    "plugins": ["expo-router", "expo-secure-store"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.midnghtsapphire.alohadebunker"
+    },
+    "android": {
+      "package": "com.midnghtsapphire.alohadebunker",
+      "adaptiveIcon": {
+        "backgroundColor": "#0b0f19"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    }
+  }
+}
