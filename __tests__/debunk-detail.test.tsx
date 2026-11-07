@@ -7,7 +7,11 @@ jest.mock('expo-router', () => ({
   useLocalSearchParams: () => mockParams,
 }));
 
+// These imports must stay below the jest.mock: the mock factory closes over
+// mockParams, which must be initialized before the screen module loads expo-router.
+// eslint-disable-next-line import/first
 import DebunkDetailScreen from '@/app/debunk/[slug]';
+// eslint-disable-next-line import/first
 import { getAllDebunks } from '@/lib/debunks';
 
 describe('<DebunkDetailScreen />', () => {
