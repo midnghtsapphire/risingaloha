@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Typecheck, test, lint, web export
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Tests
+        run: npx jest --ci
+
+      - name: Lint
+        run: npx eslint .
+
+      - name: Web export (the ship path)
+        run: npx expo export -p web
+        env:
+          CI: "1"
+
+      - name: Export sanity check
+        # Static rendering must produce real content, not an empty shell.
+        run: |
+          test -f dist/index.html
+          grep -q "RisingAloha" dist/index.html
