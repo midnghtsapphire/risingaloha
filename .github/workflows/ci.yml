@@ -46,7 +46,9 @@ jobs:
           CI: "1"
 
       - name: Export sanity check
-        # Static rendering must produce real content, not an empty shell.
+        # Static rendering must produce real page content, not an empty shell.
+        # The phrase is feed-screen body copy from app/(tabs)/index.tsx — the
+        # app name alone would match the <title> even with an empty body.
         run: |
           test -f dist/index.html
-          grep -q "RisingAloha" dist/index.html
+          grep -q "Compare claims against the evidence." dist/index.html
