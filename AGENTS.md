@@ -206,36 +206,42 @@ Before declaring work complete:
 ## Project-Specific Context
 
 ### What This Project Is
-Sessiono — session musician subscription platform. Users browse, book, and pay session musicians. Musicians list their services, set rates, and manage bookings.
+RisingAloha Debunker — a cross-platform (iOS / Android / web) fact-check app that debunks viral COVID-19 claims against primary scientific sources. Built with Expo SDK 52 (pinned) + TypeScript (strict) + NativeWind + Expo Router. The app currently runs entirely off a local JSON seed corpus; there is no backend yet. See `README.md` for the overview and `HANDOFF.md` for the authoritative TODO list and constraints.
 
 ### Architecture
 ```
-app/                    # Expo Router file-based routing
-  (tabs)/               # Bottom tab navigation
-    index.tsx           # Home — browse featured musicians
-    search.tsx          # Search by instrument/genre
-    bookings.tsx        # My bookings list
-    profile.tsx         # User profile + subscription
-  auth/login.tsx        # Login/signup modal
-  musician/[id].tsx     # Musician detail + booking
-components/             # Reusable UI components
-lib/supabase.ts         # Supabase client with SecureStore
-constants/              # Theme, config
+app/                          # Expo Router file-based routing
+  _layout.tsx                 # Root stack
+  (tabs)/
+    _layout.tsx               # Bottom tabs
+    index.tsx                 # Feed — all fact-checks, newest first
+    search.tsx                # Keyword search across claims
+    submit.tsx                # Submit a claim for research (UI-only)
+  debunk/[slug].tsx           # Fact-check detail
+components/                   # DebunkCard, VerdictBadge, SearchBar, SourceList
+lib/debunks.ts                # Data layer (search, filter, lookup) over the JSON seed
+types/debunk.ts               # Debunk / Verdict / Source types
+data/debunks.json             # Seed fact-check corpus (5 entries)
+__tests__/                    # Jest (jest-expo) — data layer + component/screen render tests
+mrna-vaccine-integration-factcheck.md  # Long-form source for the first entry
+legacy/kennel/                # Unrelated old static page (safe to delete)
 ```
 
 ### Key Commands
 ```bash
-npx expo start          # Dev server (scan QR with Expo Go)
-npx expo start --web    # Web dev server
-eas build --platform all  # Build for iOS + Android
-eas submit --platform ios  # Submit to App Store
+npm install             # First-time setup
+npm run typecheck       # tsc --noEmit (strict)
+npx jest                # Run tests (also: npm test)
+npx eslint .            # Lint (eslint-config-expo)
+npx expo start          # Dev server (scan QR with Expo Go); npm run web for browser
+npx expo export -p web  # Static web export (verified working)
 ```
 
 ### Current State
-- UI scaffolding complete with dark cinematic theme
-- Demo data in place — needs Supabase integration
-- Auth screen built — needs Supabase auth wiring
-- Stripe subscription integration not started
-- Musician profile photos not implemented (use expo-image)
-- Push notifications not implemented
-- Search is static — needs Supabase full-text search
+- Scaffold complete: UI runs against seed data on device and web; static web export works
+- Jest tests cover the data layer and render tests for screens/components
+- Submit tab is UI-only (local state) — pending Supabase backend per `HANDOFF.md`; do not provision Supabase, Stripe, domains, or any paid/credentialed service without Audrey's sign-off
+- No Supabase integration — `lib/debunks.ts` reads static JSON; keep its function signatures when swapping in real queries
+- Stripe subscriptions not started (`.env.example` lists the env vars each integration will need)
+- No app icons or splash assets yet — `app.json` references none; add `assets/icon.png` and `assets/splash.png` once a logo exists
+- EAS build/submit, domain, and hosting not set up
