@@ -51,6 +51,28 @@ tests cover the data layer. The pieces that need real-world credentials (Supabas
 backend, Stripe subscriptions, EAS submission, domain, hosting) are explicitly
 left as TODOs in `HANDOFF.md`; see that file before shipping.
 
+## Test
+
+Per the revvel-standards TEST-section convention (see commit `3ebb745`), the
+current state of what ships in this repo:
+
+| Area                                            | Status            |
+|-------------------------------------------------|-------------------|
+| Data layer — `lib/debunks.ts` (Jest)            | ✅ 7/7 pass       |
+| `<VerdictBadge />` render (Jest + RNTL)         | ✅ 6/6 pass       |
+| `<DebunkCard />` render (Jest + RNTL)           | ✅ 3/3 pass       |
+| Submit screen gating + reset (Jest + RNTL)      | ✅ 2/2 pass       |
+| Debunk detail route (not-found + happy path)    | ✅ 3/3 pass       |
+| TypeScript strict (`tsc --noEmit`)              | ✅ clean          |
+| Expo web runtime smoke test                     | ⏳ pending (manual) |
+| Expo native (iOS / Android via Expo Go)         | ⏳ pending (manual) |
+| EAS build (iOS + Android)                       | ⏳ not run        |
+| Supabase backend integration tests              | ⏳ not wired      |
+| Stripe subscription flow tests                  | ⏳ not wired      |
+
+Totals across 5 Jest suites: **21/21 passing** in ~3s. Reproduce locally with
+`npm test && npx tsc --noEmit`.
+
 ## License
 
 All rights reserved. Owned by Audrey Evans (midnghtsapphire).
