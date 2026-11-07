@@ -9,9 +9,12 @@
     "android": "expo start --android",
     "web": "expo start --web",
     "test": "jest",
+    "test:ci": "jest --ci",
     "test:data": "jest __tests__/debunks.test.ts",
     "typecheck": "tsc --noEmit",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "lint:ci": "eslint .",
+    "export:web": "expo export -p web"
   },
   "dependencies": {
     "expo": "~52.0.0",
